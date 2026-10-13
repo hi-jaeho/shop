@@ -1,10 +1,12 @@
-import './App.css';
-import Main from "./layouts/Main";
-import Headers from "./layouts/Headers";
-import ProductList from '../products/ProductList';
-import ProductInfo from '../products/ProductInfo';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
-import AddProduct from './layouts/AddProduct';
+
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
+import Main from './layouts/Main'
+import Header from './layouts/Header'
+import ProductList from './products/ProductList'
+import ProductInfo from './products/ProductInfo'
+import AddProduct from './products/AddProduct'
+import Signin from './users/SiginIn'
 
 function App() {
 
@@ -12,13 +14,14 @@ function App() {
     <>
       <section className="app">
         <BrowserRouter>
-          <Headers />
+          <Header />
           <div className='container'>
             <Routes>
               <Route path='/' element={<Main />} />
               <Route path='/products' element={<ProductList />} />
               <Route path='/products/:id' element={<ProductInfo />} />
               <Route path='/add-product' element={<AddProduct />} />
+              <Route path='/signin' element={<Signin />} />
             </Routes>
           </div>
         </BrowserRouter>
@@ -27,4 +30,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
