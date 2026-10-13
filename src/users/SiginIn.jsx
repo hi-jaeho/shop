@@ -2,7 +2,7 @@ import { useState } from "react";
 import users from "../datas/users"
 import { useNavigate } from "react-router-dom";
 
-const SignIn = () => {
+const SignIn = ({onLogin}) => {
     const [formData, setFormData] = useState({
         username: "",  //id
         password: ""   //password
@@ -40,6 +40,7 @@ const SignIn = () => {
         //setResult(matched ? "success" : "fail");
         if(matched){
             setResult("success");
+            onLogin(username);
             // 메인 페이지로 이동
             navigate("/");
         }else{
